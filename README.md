@@ -37,12 +37,8 @@ User notes are anonymously scored for sentiment using an ML model developed on P
 ![Reflections scores](./src/img/screenshots/reflection2.png)
 Helpful notes to explain what is going on in this page, and more specific scores displayed below. In the future, it would be nice to incorporate Named Entity Recognition into the project to help diagnose specifically what is affecting their mood.
 
+![About](./src/img/screenshots/about.png)
+The about page.
+
 Thank you for reading! <3
 Team No Pineapples
-
-Z(C)HANG DYNASTY B)))))))
-gong empire is also kind of cool
-stepin
-
-http://brandons-mbp-5.devices.brown.edu:5002/
-http://brandons-mbp-5.devices.brown.edu:5002/login.html

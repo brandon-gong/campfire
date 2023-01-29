@@ -1,0 +1,52 @@
+.navbar {
+  background:#879B9C;
+  opacity: 0;
+  border: none;
+  padding: 10px;
+  padding-top: 30px;
+  height: 130px;
+  background-color: transparent !important;
+  transition: opacity 0.7s;
+}
+.nav-link {
+  cursor: pointer;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2em;
+  color: rgba(255,255,255,0.6) !important;
+  transition: color 0.7s;
+}
+.active, .nav-link:hover {
+  color: rgba(255, 255, 255, 1) !important;
+}
+.navbar:hover {
+  opacity: 100%;
+}
+
+.logout_button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  min-height: 150;
+  background: rgba(179, 131, 172, 0.25);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+#logout {
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 992px) {
+  /* For mobile phones: */
+  .navbar {
+    opacity: 100% !important;
+    height: 500px !important;
+  }
+}
+
+.card {
+  background-color: #f5f3f0 !important;
+}

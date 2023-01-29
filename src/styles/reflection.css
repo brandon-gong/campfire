@@ -1,0 +1,95 @@
+body {
+    background-image: url('../img/bg_journal.png');
+    background-size: cover;
+    background-position: bottom;
+		background-attachment:fixed;
+  }
+
+.card {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin: 1em auto;
+    font-size: 1.1rem;
+	line-height: 1.5;
+    background-color: #fffdfa;
+    width: 70%;
+    max-width: 450px;
+}
+
+.text-input{
+    margin: 1em auto;
+    font-size: 1.1rem;
+    text-align: center;
+    align-items: middle;
+}
+
+textarea{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+button{
+    padding: 12px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 6px;
+    
+}
+
+#tester {
+    margin-top: 30px;
+}
+
+h1 {
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3em;
+    color: rgb(255,255,255) !important;
+    margin-top: 40px;
+}
+
+h3 {
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3em;
+    color: rgb(255,255,255) !important;
+    margin-top: 40px;
+}
+
+p {
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255,255,255) !important;
+    margin-top: 40px;
+}
+
+.analyze {
+    margin: 1em auto;
+    font-size: 1.1rem;
+    text-align: center;
+    align-items: middle;
+}
+
+button{
+    padding: 12px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 6px;
+}
+
+@media only screen and (max-width: 992px) {
+    /* For mobile phones: */
+    .navbar {
+      opacity: 100% !important;
+      height: 500px !important;
+    }
+  }

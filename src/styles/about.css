@@ -1,0 +1,19 @@
+h1 {
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3em;
+    color: rgb(255,255,255) !important;
+    margin-top: 40px;
+}
+
+p {
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255,255,255) !important;
+    margin-top: 40px;
+}
+
+body {
+    background-image: url('../img/bg_full.png');
+    background-position: bottom;
+  }

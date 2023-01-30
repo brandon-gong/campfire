@@ -1,3 +1,11 @@
+_Note: This project was developed during a 24-hour window as a part of Brown
+University's annual hackathon, Hack@Brown._
+
+_Team members: [Thomas Chang](https://github.com/Tchang27), [Brandon Gong](https://github.com/brandon-gong), [Christina Stepin](https://github.com/cstepin), [Sherry Zhang](https://github.com/serulii)_
+
+---
+
+
 # Welcome to Ember!
 A mindfulness webapp to help you relax, featuring guided meditation, journaling, sentiment analysis, and a little campfire friend!
 

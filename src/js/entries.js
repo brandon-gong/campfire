@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js';
-import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -46,11 +46,28 @@ document.getElementById("logout").addEventListener("click", () => {
 
 let uid = null;
 
+function deleteNote(reference) {
+	console.log("function called properly with id " + reference);
+	deleteDoc(doc(db, uid, reference)).then(() => {
+		console.log("Deleted successfully");
+		let newId = "entry-" + reference;
+		let element = document.getElementById(newId);
+		element.parentNode.removeChild(element);
+
+		// File deleted successfully
+
+	}).catch((error) => {
+		// Uh-oh, an error occurred!
+		console.error(error);
+	});
+}
+module.deleteNote = deleteNote;
+
 function textareaValue(e) {
 	e.preventDefault();
 	let get = document.getElementById("new_journal_entry").value;
 
-	// document.getElementById("new_journal_entry").value = "";
+	document.getElementById("new_journal_entry").value = "";
 
 	let time = Date.now();
 
@@ -59,7 +76,6 @@ function textareaValue(e) {
 		addDoc(collection(db, uid), {
 			text: get,
 			date: time, //MM-DD-YYYY
-			sa_score: []
 		});
 	} catch (e) {
 		console.error("Error adding document: ", e);
@@ -76,30 +92,43 @@ function textareaValue(e) {
 
 }
 
-document.getElementById("saveentry").addEventListener("click", textareaValue);
-
+// document.getElementById("saveentry").addEventListener("click", textareaValue);
 function initJournal(u) {
+	// Delete the file
+
 	uid = u;
 	let postsRef = collection(db, uid)
-	let queryRef = query(postsRef, orderBy("date", "desc"), limit(5));
+	let queryRef = query(postsRef, orderBy("date", "desc"));
 	console.log(queryRef);
 	getDocs(queryRef).then((qdocs) => {
 		let ih = "";
+		let i = 0;
 		qdocs.forEach((doc) => {
-			// doc.id
-			// deleteNote(id to delete)
-			// <div class="row" id="entry-${doc.id}">
-			// onclick="deleteNote(" + doc.id + ")">
-			ih += `
+			ih = `
               <div class="card" id="entry-${doc.id}">
+                <button onclick="
+                  console.log('hello');
+                  module.deleteNote('${doc.id}');
+                  return false;
+                ">Delete</button>
                 <div class="card-body">
                   <h5 class="card-title">${new Date(doc.data().date).toDateString()}</h5>
                   <p id = "card_two" class="card-text">${doc.data().text}</p>
                 </div>
               </div>
-            </div>`
+            `;
+			if (i % 3 == 0) {
+				document.getElementById("history1").innerHTML += ih;
+			}
+			else if (i % 3 == 1) {
+				document.getElementById("history2").innerHTML += ih;
+			}
+			else {
+				document.getElementById("history3").innerHTML += ih;
+			}
+			i++;
 		});
-		document.getElementById("history").innerHTML = ih;
+
 	}, (err) => {
 		console.log(error);
 	})

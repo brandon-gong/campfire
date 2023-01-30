@@ -1,175 +1,88 @@
-<!DOCTYPE html>    
-<head>
-    <title>Home</title>
-    <meta charset="utf-8">
+<!DOCTYPE html>
 
-    <!-- <link rel="stylesheet" type="text/css" href="../styles/home.css"> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../styles/index.css">
-    <link rel="stylesheet" type="text/css" href="../styles/home.css">
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+
+	<!-- <link rel="stylesheet" type="text/css" href="../styles/home.css"> -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../styles/index.css">
+	<link rel="stylesheet" type="text/css" href="../styles/home.css">
 
 </head>
 <style>
-    .navbar-nav {
-        margin-left: auto;
-    }
+	.navbar-nav {
+		margin-left: auto;
+	}
 </style>
+
 <body style="background-repeat: no-repeat; background-color: #090919">
-    <audio loop autoplay>
+	<audio loop autoplay>
 		<source src="img/fire_sounds.wav" type="audio/wav">
 	</audio>
-    <div class="container">
-        <!-- We need a nav bar here to link to journal -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"><img src="img/ember_text_light.png" width="300" style="margin-left: -100px"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                    
-                  <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="journal.html">Journal</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="entries.html">Past Entries</a>
-              </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="reflection.html">Reflection</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-            </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="logout">Log Out</a>
-                </li>
-                
-              </ul>
+	<div class="container">
+		<!-- We need a nav bar here to link to journal -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#"><img src="img/ember_text_light.png" width="300"
+					style="margin-left: -100px"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
 
-            </div>
-        </nav>
+						<a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="journal.html">Journal</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="entries.html">Past Entries</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="reflection.html">Reflection</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="logout">Log Out</a>
+					</li>
 
-    <header class="page-header header container-fluid">
-        <div class="row">
-            <div class="col align-self-center">
-                <!-- Quotes here on a carousel -->
-                <!-- <div id="quotes-carousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="/img/testimg.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="/img/testimg.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="..." alt="Third slide">
-                    </div>
-                    </div>
-                </div> -->
-                <div id="quotes-carousel" class = "carousel"></div>
-            </div>
-        </div> 
-        <center>
-            <a href="/journal.html"><img src="../img/campfire.gif" alt="..." width="300" height="400" id="flame"></a>
-        </center>
-    </header>
-    </div>
+				</ul>
 
-    <script type="module">
-		// Import the functions you need from the SDKs you need
-		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
-		import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js';
+			</div>
+		</nav>
 
-		// TODO: Add SDKs for Firebase products that you want to use
-		// https://firebase.google.com/docs/web/setup#available-libraries
-		// Your web app's Firebase configuration
-		const firebaseConfig = {
-			apiKey: "<REDACTED>",
-			authDomain: "ember-d1df3.firebaseapp.com",
-			projectId: "ember-d1df3",
-			storageBucket: "ember-d1df3.appspot.com",
-			messagingSenderId: "769175463067",
-			appId: "1:769175463067:web:ec900d28d33c3f62d6523e"
-		};
+		<header class="page-header header container-fluid">
+			<div class="row">
+				<div class="col align-self-center">
+					<!-- Quotes here on a carousel -->
+					<!-- <div id="quotes-carousel" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img class="d-block w-100" src="/img/testimg.jpg" alt="First slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block w-100" src="/img/testimg.jpg" alt="Second slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block w-100" src="..." alt="Third slide">
+					</div>
+					</div>
+				</div> -->
+					<div id="quotes-carousel" class="carousel"></div>
+				</div>
+			</div>
+			<center>
+				<a href="/journal.html"><img src="../img/campfire.gif" alt="..." width="300" height="400"
+						id="flame"></a>
+			</center>
+		</header>
+	</div>
 
-		// Initialize Firebase
-		const app = initializeApp(firebaseConfig);
-
-        // Initialize Firebase Authentication and get a reference to the service
-		const auth = getAuth(app);
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                console.log("user logged in");
-                // User is signed in, see docs for a list of available properties
-                // https://firebase.google.com/docs/reference/js/firebase.User
-                const uid = user.uid;
-            } else {
-                window.location.href = "/login.html";
-            }
-        });
-
-        document.getElementById("logout").addEventListener("click", () => {
-            signOut(auth).then(() => {
-                window.location.href = "/login.html";
-            }).catch((error) => {
-                console.log("error");
-            });
-        });
-        
-    </script>
-
-    <!-- <script src="../js/main.js"></script> -->
-    <script>
-        let quotes = [
-            "Take a moment to find a comfortable position.",
-            "Notice how your body is feeling in this moment.",
-            "Allow any thoughts to flow through your mind. Just let everything be there.",
-            "Take a deep breath...",
-            "See if you can feel the contact with what's supporting your body right now.",
-            "Thoughts or worries might be coming up, and that is totally okay. Allow your awareness to rest back towards your body.",
-            "Continue to notice the inhale and exhale.",
-            "Take a moment to express gratitude towards yourself for taking time to cultivate this practice.",
-            "“When you give joy to other people, you get more joy in return. You should give a good thought to happiness that you can give out.”— Eleanor Roosevelt.",
-            "“Success is not final; failure is not fatal: It is the courage to continue that counts.” — Winston S. Churchill.",
-            "“Don’t let yesterday take up too much of today.” — Will Rogers",
-            "“If you are working on something that you really care about, you don’t have to be pushed. The vision pulls you.” — Steve Jobs.",
-            "“Setting goals is the first step in turning the invisible into the visible.” — Tony Robbins.",
-            "Get a nice gentle stretch through your neck, spine, and hips.",
-            "Bring your focus to your breath.",
-            "Let your shoulders relax.",
-            "Take a moment to pause and ground yourself. What are three things you can see around you? Two things you can hear? One thing you can touch?",
-            "Drop your gaze or close your eyes.",
-            "Feel gravity pulling you down, rooting the body, and connecting it to the Earth.",
-            "Soften the spine and feel your arms get heavy.",
-            "Deepen your breath.",
-            "You will be okay.",
-            "I believe in you.",
-            "Make sure to take a break.",
-            "Drink some water!"
-        ];
-
-        // set interval function -- callback, interval
-        // in the callback, fade out old quote, pick random quote, fade back in
-// document.getelementByid(...).innerHTMl = aseraewf
-        setInterval(changeQuote, 10000);
-
-        function delay(time) {
-        return new Promise(resolve => setTimeout(resolve, time));
-        }
-
-        function changeQuote(){
-          // element.innerHTML = "";
-            quotesCarousel = document.getElementById("quotes-carousel");
-            quotesCarousel.classList.add("transparentquote");
-            delay(1000).then(() => {
-                quotesCarousel.innerHTML = quotes[Math.floor(Math.random() * quotes.length)];
-            quotesCarousel.classList.remove("transparentquote");
-            });
-        }
-        changeQuote();
-    </script>
+	<script type="module" src="js/index.js"></script>
 </body>
